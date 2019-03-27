@@ -1,0 +1,29 @@
+{
+  "name": "team-project",
+  "version": "1.0.0",
+  "description": "A magical spellchecker",
+  "main": "./src/scripts/server.js",
+  "scripts": {
+    "test": "tape ./src/tests/tests.js | tap-spec",
+    "coverage": "istanbul cover ./src/tests/tests.js",
+    "start": "nodemon ./src/scripts/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC-Sixteen/spellchecker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC-Sixteen/spellchecker/issues"
+  },
+  "homepage": "https://github.com/FAC-Sixteen/spellchecker#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.18.10",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1"
+  }
+}
