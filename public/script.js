@@ -54,7 +54,7 @@ const appendSpells = spells => {
 };
 
 const inputHandler = e => {
-  // console.log("hai");
+  console.log("hai");
   // console.log(e.target.value);
   spellFinder(e.target.value, spells);
 };
