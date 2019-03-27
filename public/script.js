@@ -32,6 +32,10 @@ const searchQuery = document.querySelector(".spells__input");
 const spellList = document.querySelector(".spells__list");
 
 const spellFinder = (str, obj) => {
+  if (str.length === 0) {
+    spellList.innerHTML = "";
+    return;
+  }
   const lowerNames = obj.map(item => item.spell.toLowerCase());
   let returnSpells = [];
   lowerNames.forEach(spell => {
@@ -41,6 +45,7 @@ const spellFinder = (str, obj) => {
 };
 
 const appendSpells = spells => {
+  spellList.innerHTML = "";
   spells.forEach(spell => {
     const li = document.createElement("li");
     li.textContent = spell;
@@ -49,7 +54,9 @@ const appendSpells = spells => {
 };
 
 const inputHandler = e => {
-  console.log("hai");
+  // console.log("hai");
+  // console.log(e.target.value);
+  spellFinder(e.target.value, spells);
 };
 
-spellList.oninput = inputHandler;
+searchQuery.oninput = inputHandler;
