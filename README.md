@@ -1,0 +1,2 @@
+# spellchecker
+A magical spellchecker
