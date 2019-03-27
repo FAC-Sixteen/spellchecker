@@ -48,4 +48,8 @@ const appendSpells = spells => {
   });
 };
 
-spellFinder("a", spells);
+const inputHandler = e => {
+  console.log("hai");
+};
+
+spellList.oninput = inputHandler;
