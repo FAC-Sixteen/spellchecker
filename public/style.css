@@ -1,6 +1,11 @@
 html {
-    cursor: url('favicon.ico'), auto;    
-    background-color: black;
+  cursor: url("favicon.ico"), auto;
+  background-color: black;
+}
+
+.selected {
+  background-color: hotpink;
+      
 }
 
 main {
@@ -27,18 +32,41 @@ main {
 }
 
 .spells__wrapper {
-    border: 1px solid brown;
     max-height: 60vh;
+    max-width: 70vw;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .spells__input {
+    border-width: 0px;
+    padding: 0px;
     font-size: inherit;
     font-family: "Architects Daughter", serif;
+    width: 70vw;
+    overflow-x: hidden;
+    background-color: transparent;
+}
+
+::placeholder {
+    font-size: 3vh;
+}
+
+#line-break {
+    padding: 0;
+    margin: 0;
+    width: 35vh;
+    border-color: black;
+}
+
+.spells__input:focus {
+    outline: none;
 }
 
 .spells__list li {
     font-family: "Architects Daughter", serif;
+    padding-top: 3vh;
+    color: #434A47;
     }
 
 .spells__list li:hover {
@@ -63,4 +91,5 @@ main {
     font-family: "Great Vibes", cursive;
     font-weight: 600;
     color: darkred;
+
 }
