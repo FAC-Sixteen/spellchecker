@@ -54,9 +54,15 @@ const appendSpells = spells => {
 };
 
 const inputHandler = e => {
-  // console.log("hai");
-  // console.log(e.target.value);
-  spellFinder(e.target.value, spells);
+  console.log("hai");
+  const input = e.target.value;
+
+  fetch("/spells")
+    .then(response => response.json())
+    .then(json => spellFinder(input, json));
 };
 
+const properCaser = string => string.replace(/\b\w/g, l => l.toUpperCase());
+
 searchQuery.oninput = inputHandler;
+console.log(properCaser("wingardium leviosa"));
