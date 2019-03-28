@@ -55,8 +55,21 @@ const appendSpells = spells => {
 
 const inputHandler = e => {
   console.log("hai");
+  const input = e.target.value;
+
+  fetch("/spells")
+    .then(response => response.json())
+    .then(json => spellFinder(input, json));
   // console.log(e.target.value);
-  spellFinder(e.target.value, spells);
+  // spellFinder(e.target.value, spells);
 };
 
 searchQuery.oninput = inputHandler;
+
+// fetch('http://example.com/movies.json')
+//   .then(function(response) {
+//     return response.json();
+//   })
+//   .then(function(myJson) {
+//     console.log(JSON.stringify(myJson));
+//   });

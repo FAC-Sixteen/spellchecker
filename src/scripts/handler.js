@@ -5,6 +5,7 @@ console.log("HI");
 
 const handler = (req, res) => {
   const endpoint = req.url;
+  console.log(endpoint);
   if (endpoint === "/") {
     fs.readFile(
       path.join(__dirname, "..", "..", "public", "index.html"),
@@ -26,6 +27,25 @@ const handler = (req, res) => {
         return;
       }
       res.end(file);
+    });
+  } else if (endpoint[0] === "/") {
+    console.log("aaa");
+    const extension = endpoint.split(".")[1];
+    const extensionType = {
+      html: "text/html",
+      css: "text/css",
+      js: "application/javascript",
+      jpg: "image/jpeg",
+      png: "image/png"
+    };
+    fs.readFile(__dirname + "/../../public" + endpoint, (error, file) => {
+      if (error) {
+        console.log(error);
+        return;
+      } else {
+        res.writeHead(200, { "Content-Type": extensionType[extension] });
+        res.end(file);
+      }
     });
   } else {
     res.writeHead(404, { "Content-Type": "text/plain" });
