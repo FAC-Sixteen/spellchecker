@@ -11,9 +11,14 @@
   </head>
   <body>
     <section class="spells">
-      <label for="spells-input"></label>
-      <input id="spells-input" class="spells__input" type="text" />
-      <ul class="spells__list"></ul>
+      <input
+        aria-label="Search for a spell here"
+        id="spells-input"
+        class="spells__input"
+        type="text"
+      />
+
+      <ul role="listbox" class="spells__list"></ul>
     </section>
     <script src="script.js" type="text/javascript"></script>
     <script>

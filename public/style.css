@@ -1,3 +1,7 @@
 html {
-    cursor: url('favicon.ico'), auto;
+  cursor: url("favicon.ico"), auto;
+}
+
+.selected {
+  background-color: hotpink;
 }

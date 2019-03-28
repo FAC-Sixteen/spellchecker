@@ -46,15 +46,21 @@ const spellFinder = (str, obj) => {
 
 const appendSpells = spells => {
   spellList.innerHTML = "";
+  let ind = 0;
   spells.forEach(spell => {
     const li = document.createElement("li");
-    li.textContent = spell;
+    const button = document.createElement("button");
+    button.textContent = spell;
+    button.id = `spell-${ind}`;
+    ind += 1;
+    li.appendChild(button);
     spellList.appendChild(li);
   });
 };
 
 const inputHandler = e => {
-  console.log("hai");
+  const x = document.activeElement.id;
+  console.log(x);
   const input = e.target.value;
 
   fetch("/spells")
@@ -63,6 +69,45 @@ const inputHandler = e => {
 };
 
 const properCaser = string => string.replace(/\b\w/g, l => l.toUpperCase());
+
+const focusChange = num => {
+  if (document.hasFocus) {
+    console.log("has focus!");
+    const focusedThing = document.activeElement;
+    const focusedThingId = focusedThing.id;
+    let newFocusId = "";
+    if (focusedThingId === "spells-input") {
+      console.log("input already focused, going to spell0");
+      newFocusId = "spell-0";
+    } else {
+      focusedThing.classList.remove("selected");
+      console.log("one of the spells is focused");
+      newFocusId =
+        "spell-" + (parseInt(focusedThingId.replace("spell-", "")) + num);
+    }
+    console.log("focusing...", newFocusId);
+    const newFocus =
+      newFocusId === "spell-NaN"
+        ? document.querySelector("#spells-input")
+        : document.querySelector(`#${newFocusId}`);
+    console.log(newFocus);
+    newFocus.focus();
+    newFocus.classList.add("selected");
+  } else {
+    console.log("no focus");
+    searchQuery.focus();
+  }
+};
+
+document.addEventListener("keydown", function(event) {
+  if (event.which === 40) {
+    event.preventDefault();
+    focusChange(1);
+  } else if (event.which === 38) {
+    event.preventDefault();
+    focusChange(-1);
+  }
+});
 
 searchQuery.oninput = inputHandler;
 console.log(properCaser("wingardium leviosa"));
