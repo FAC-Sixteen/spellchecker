@@ -80,6 +80,8 @@ Apparently, most web browsers' default behaviour is to look for your favicon in 
 
 - HEROKU
 
+![](https://media.giphy.com/media/HpgnRUAhYKYAE/giphy.gif)
+
 ------------
 
 ## :bulb: What we learned
