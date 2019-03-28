@@ -7,6 +7,7 @@ main {
     /* display: flex; */
     /* align-items: center; */
     /* justify-content: center; */
+    position: relative;
 }
 
 .spells__image {
@@ -20,7 +21,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2em;
     /* flex-direction: column; */
+    padding: 2em;
     padding-top: 20vh;
     /* padding: 20vh 2em; */
 }
@@ -32,6 +35,10 @@ main {
     /* width: 100vw; */
 }
 
+.spells__input {
+    font-size: inherit;
+}
+
 .spells__list li {
     
     }
@@ -40,3 +47,21 @@ main {
 color: hotpink
 }
 
+.page__title {
+    position: absolute;
+    top: 4vh;
+    font-size: 2rem;
+}
+
+.page__number {
+    position: absolute;
+    bottom: 4vh;
+    font-size: 1.5rem;
+}
+
+.page__title, .page__number {
+    right: 6vh;
+    font-family: "Great Vibes", cursive;
+    font-weight: 600;
+    color: darkred;
+}
