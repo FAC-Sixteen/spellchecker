@@ -101,5 +101,7 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
+const getSpellInfo = spell => {};
+
 searchQuery.oninput = inputHandler;
 console.log(properCaser("wingardium leviosa"));
