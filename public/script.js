@@ -59,8 +59,6 @@ const appendSpells = spells => {
 };
 
 const inputHandler = e => {
-  const x = document.activeElement.id;
-  console.log(x);
   const input = e.target.value;
 
   fetch("/spells")
@@ -72,29 +70,23 @@ const properCaser = string => string.replace(/\b\w/g, l => l.toUpperCase());
 
 const focusChange = num => {
   if (document.hasFocus) {
-    console.log("has focus!");
     const focusedThing = document.activeElement;
     const focusedThingId = focusedThing.id;
     let newFocusId = "";
     if (focusedThingId === "spells-input") {
-      console.log("input already focused, going to spell0");
       newFocusId = "spell-0";
     } else {
       focusedThing.classList.remove("selected");
-      console.log("one of the spells is focused");
       newFocusId =
         "spell-" + (parseInt(focusedThingId.replace("spell-", "")) + num);
     }
-    console.log("focusing...", newFocusId);
     const newFocus =
       newFocusId === "spell-NaN"
         ? document.querySelector("#spells-input")
         : document.querySelector(`#${newFocusId}`);
-    console.log(newFocus);
     newFocus.focus();
     newFocus.classList.add("selected");
   } else {
-    console.log("no focus");
     searchQuery.focus();
   }
 };
