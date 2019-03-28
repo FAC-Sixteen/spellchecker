@@ -1,6 +1,11 @@
 html {
-    cursor: url('favicon.ico'), auto;    
-    background-color: black;
+  cursor: url("favicon.ico"), auto;
+  background-color: black;
+}
+
+.selected {
+  background-color: hotpink;
+      
 }
 
 main {
@@ -63,4 +68,5 @@ main {
     font-family: "Great Vibes", cursive;
     font-weight: 600;
     color: darkred;
+
 }

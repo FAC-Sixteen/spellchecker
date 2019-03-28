@@ -19,10 +19,12 @@
     <img class = "spells__image" src = "public/assets/torn-page.jpg" alt="a torn page">
     <p class="page__title">Spells</p>
     <section class="spells">
-<div class="spells__wrapper">
-      <label for="spells-input"></label>
-      <input id="spells-input" class="spells__input" type="text" />
-
+      <input
+        aria-label="Search for a spell here"
+        id="spells-input"
+        class="spells__input"
+        type="text"
+      />
       <ul class="spells__list"></ul>
     </div>
       <!-- add dropdown list that modifies input field and allows each option to be clicked
