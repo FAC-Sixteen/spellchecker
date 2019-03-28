@@ -40,9 +40,11 @@
             js: "application/javascript",
             jpg: "image/jpeg",
             png: "image/png",
-            ico: "image/x-icon"
+            ico: "image/x-icon",
+            TTF: "font/ttf"
         };
-        fs.readFile(__dirname + "/../../public" + endpoint, (error, file) => {
+
+        fs.readFile(path.join(__dirname, "../..", endpoint), (error, file) => {
             if (error) {
                 console.log(error);
                 return;
@@ -55,8 +57,22 @@
         });
     }
 
+    const handle404 = (req, res) => {
+        fs.readFile(path.join(__dirname, "../../public/error.html"), (error, file) => {
+            if (error) {
+                console.log(error);
+                return;
+            }
+            else {
+            res.writeHead(404, { "Content-Type": "text/html" });
+        res.end(file);
+            }
+        })
+    }
+
     module.exports = {
         handleHomeRoute,
         handleSpellRoute,
-        handlePublic
+        handlePublic,
+        handle404
     }

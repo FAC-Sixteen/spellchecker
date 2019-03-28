@@ -1,3 +1,7 @@
 html {
     cursor: url('favicon.ico'), auto;
 }
+
+p {
+    color: red;
+}
