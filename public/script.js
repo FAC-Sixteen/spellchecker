@@ -1,35 +1,6 @@
-const spells = [
-  {
-    _id: "5b74ebd5fb6fc0739646754c",
-    spell: "Aberto",
-    type: "Jinx",
-    effect: "opens objects"
-  },
-  {
-    _id: "5b74ecfa3228320021ab622b",
-    spell: "Accio",
-    type: "Charm",
-    effect: "Summons an object",
-    __v: 0
-  },
-  {
-    _id: "5b74ed2f3228320021ab622c",
-    spell: "Age Line",
-    type: "Enchantment",
-    effect: "Hides things from younger people",
-    __v: 0
-  },
-  {
-    _id: "5b74ed453228320021ab622d",
-    spell: "Aguamenti",
-    type: "Curse",
-    effect: "shoots water from wand",
-    __v: 0
-  }
-];
-
 const searchQuery = document.querySelector(".spells__input");
 const spellList = document.querySelector(".spells__list");
+const outputDisplay = document.querySelector(".output__display");
 
 const spellFinder = (str, obj) => {
   if (str.length === 0) {
@@ -51,6 +22,7 @@ const appendSpells = spells => {
     const li = document.createElement("li");
     const button = document.createElement("button");
     button.textContent = spell;
+    button.addEventListener("click", () => spellHandler(button.textContent));
     button.id = `spell-${ind}`;
     ind += 1;
     li.appendChild(button);
@@ -101,7 +73,33 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
-const getSpellInfo = spell => {};
+const renderSpellInfo = spell => {
+  console.log(spell);
+  outputDisplay.innerHTML = "";
+
+  console.log(outputDisplay);
+  const name = document.createElement("li");
+  name.textContent = `Name: ${spell.spell}`;
+  outputDisplay.appendChild(name);
+  const type = document.createElement("li");
+  type.textContent = `Type: ${spell.type}`;
+  outputDisplay.appendChild(type);
+  const effect = document.createElement("li");
+  effect.textContent = `Effect: ${spell.effect}`;
+  outputDisplay.appendChild(effect);
+  outputDisplay.classList.add(`${spell.type}`);
+};
+
+const pullSpell = (str, obj) => obj.filter(thing => thing.spell === str);
+
+const spellHandler = spell => {
+  console.log(spell);
+  const spellName = properCaser(spell);
+  console.log(spellName);
+  fetch("/spells")
+    .then(response => response.json())
+    .then(json => pullSpell(spellName, json))
+    .then(spell => renderSpellInfo(spell[0]));
+};
 
 searchQuery.oninput = inputHandler;
-console.log(properCaser("wingardium leviosa"));
