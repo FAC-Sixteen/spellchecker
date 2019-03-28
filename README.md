@@ -60,13 +60,19 @@ We couldn't understand why the handler function in our handler.js file wouldn't 
 
 - Reaching the 404 error page
 
+![](https://media.giphy.com/media/103t71VKmtY1UY/giphy.gif)
+
 We struggled to catch all the possible 404 requests in our router.js file. Many requests that should have resulted in a 404 were not reaching our beautiful 404 page. This made us sad.
 
 - Keying through spells on the DOM
 
+![](https://media.giphy.com/media/aYzxVt2lMrZXW/giphy.gif)
+
 Adding keyboard navigation to the autocompleted spells list was tricky - but, in the end, doable!
 
 - Favicons
+
+
 
 Apparently, most web browsers' default behaviour is to look for your favicon in the **root directory**. Moving it to a subfolder causes all kinds of problems.
 
