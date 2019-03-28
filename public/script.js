@@ -60,16 +60,9 @@ const inputHandler = e => {
   fetch("/spells")
     .then(response => response.json())
     .then(json => spellFinder(input, json));
-  // console.log(e.target.value);
-  // spellFinder(e.target.value, spells);
 };
 
-searchQuery.oninput = inputHandler;
+const properCaser = string => string.replace(/\b\w/g, l => l.toUpperCase());
 
-// fetch('http://example.com/movies.json')
-//   .then(function(response) {
-//     return response.json();
-//   })
-//   .then(function(myJson) {
-//     console.log(JSON.stringify(myJson));
-//   });
+searchQuery.oninput = inputHandler;
+console.log(properCaser("wingardium leviosa"));
