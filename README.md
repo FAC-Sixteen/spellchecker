@@ -26,9 +26,9 @@ Their device needs to be able to connect to a remote Node.js server on which the
 5. open the local index.html file
 
 ## :chart_with_upwards_trend: Our process
-![](https://github.com/FAC-Sixteen/spellchecker/blob/master/user-journey)
+![](https://github.com/FAC-Sixteen/spellchecker/blob/master/user-journey.jpg)
 Our User Journey Plan
-![](https://github.com/FAC-Sixteen/spellchecker/blob/master/site-architecture)
+![](https://github.com/FAC-Sixteen/spellchecker/blob/master/site-architecture.jpg)
 Our Site Architecture Plan
 1. Brainstormed ideas, picked one together
 2. Whiteboarded the user journey
