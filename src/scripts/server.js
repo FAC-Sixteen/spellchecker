@@ -1,10 +1,8 @@
-const handler = require('./handler.js');
 const http = require("http");
-const server = http.createServer(handler);
 const port = 1989;
+const router = require('./router');
+const server = http.createServer(router);
 
 server.listen(port);
 
 console.log(`We have apparated onto port ${port}!`);
-
-module.exports = server;
