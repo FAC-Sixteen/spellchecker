@@ -1,0 +1,8 @@
+main {
+    background: url(../../assets/torn-page.png) no-repeat right top fixed;
+    background-size: contain;
+    height: 100vh;
+    /* width: 800px; */
+    padding: 2em;
+}
+

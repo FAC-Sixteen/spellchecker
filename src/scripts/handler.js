@@ -45,7 +45,7 @@ const handler = (req, res) => {
     });
   } else {
     res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("This page cannot be found in the Room of Requirement!");
+    res.end("This page cannot be found in the Room of Requirement!"); //https://media.giphy.com/media/aE5XR1Az7sw3m/giphy.gif
   }
 };
 
