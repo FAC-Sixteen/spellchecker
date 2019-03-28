@@ -17,7 +17,8 @@ const readFile = (variable, res) => {
         ".js" : "text/javascript",
         ".png" : "image/png",
         ".jpg" : "image/jpeg",
-        ".jpeg" : "image/jpeg"
+        ".jpeg" : "image/jpeg",
+        ".ico" : "image/x-icon"
        }
 
     const prop = path.extname(placeholder);
@@ -26,7 +27,7 @@ const readFile = (variable, res) => {
         if (err) {
         res.writeHead(500, {'content-type': 'text/plain'});
         res.end('server error');
-        console.log(err);
+        console.log("server", err);
     } else {
         res.writeHead(200, {"content-type": object[prop]});
         console.log(placeholder);
