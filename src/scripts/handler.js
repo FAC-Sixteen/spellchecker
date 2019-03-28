@@ -17,7 +17,7 @@ const handler = (req, res) => {
     );
   } else if (endpoint === "/spells") {
     res.writeHead(200, { "Content-Type": "application/json" });
-    fs.readFile(path.join(__dirname, "..", "spells.json"), (error, file) => {
+    fs.readFile(path.join(__dirname, "..", "spells.json"), 'utf8', (error, file) => {
       if (error) {
         console.log(error);
         return;
@@ -31,7 +31,8 @@ const handler = (req, res) => {
       css: "text/css",
       js: "application/javascript",
       jpg: "image/jpeg",
-      png: "image/png"
+      png: "image/png",
+      ico: "image/x-icon"
     };
     fs.readFile(__dirname + "/../../public" + endpoint, (error, file) => {
       if (error) {
