@@ -1,14 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 
-console.log("HI");
-
 const handler = (req, res) => {
   const endpoint = req.url;
-  console.log(endpoint);
   if (endpoint === "/") {
     fs.readFile(
-      path.join(__dirname, "..", "..", "public", "index.html"),
+      path.join(__dirname, "..", "..", "public", "index.html"), "utf8",
       (error, file) => {
         if (error) {
           console.log(error);
@@ -19,9 +16,8 @@ const handler = (req, res) => {
       }
     );
   } else if (endpoint === "/spells") {
-    console.log("HI AGAIN");
     res.writeHead(200, { "Content-Type": "application/json" });
-    fs.readFile(path.join(__dirname, "..", "spells.json"), (error, file) => {
+    fs.readFile(path.join(__dirname, "..", "spells.json"), 'utf8', (error, file) => {
       if (error) {
         console.log(error);
         return;
@@ -29,14 +25,14 @@ const handler = (req, res) => {
       res.end(file);
     });
   } else if (endpoint[0] === "/") {
-    console.log("aaa");
     const extension = endpoint.split(".")[1];
     const extensionType = {
       html: "text/html",
       css: "text/css",
       js: "application/javascript",
       jpg: "image/jpeg",
-      png: "image/png"
+      png: "image/png",
+      ico: "image/x-icon"
     };
     fs.readFile(__dirname + "/../../public" + endpoint, (error, file) => {
       if (error) {
