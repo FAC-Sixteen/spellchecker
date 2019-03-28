@@ -1,22 +1,23 @@
-const newhandler = require('./handler.js');
+const handler = require('./handler.js');
 
 const router = (req, res) => {
 
 const endpoint = req.url;
+console.log(endpoint);
 
 if (endpoint === "/") {
-    newhandler.handleHomeRoute(req, res);
+    handler.handleHomeRoute(req, res);
 } 
 else if (endpoint === "/spells") {
-    newhandler.handleSpellRoute(req, res);
+    handler.handleSpellRoute(req, res);
 } 
-else if (endpoint[0] === "/") {
-    newhandler.handlePublic(req, res);
+else if (endpoint.includes('public')) {
+    handler.handlePublic(req, res);
 }
 else {
-    res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("This page cannot be found in the Room of Requirement!");
+    handler.handle404(req,res);
 }
+
 }
 
 module.exports = router;
