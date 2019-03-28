@@ -1,13 +1,12 @@
+html {
+    background-color: black;
+}
+
 main {
-    /* background: url(../../assets/torn-page.jpg) no-repeat right top fixed; */
-    /* background-size: contain; */
-    height: 100vh;
-    /* width: 800px; */
-    /* padding: 2em; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    height: 95vh;
     position: relative;
+    max-width: 800px;
+    margin: auto;
 }
 
 .spells__image {
@@ -21,30 +20,29 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    /* flex-direction: column; */
+    font-size: 2em;    
     padding: 2em;
     padding-top: 20vh;
-    /* padding: 20vh 2em; */
 }
 
 .spells__wrapper {
     border: 1px solid brown;
     max-height: 60vh;
     overflow-y: hidden;
-    /* width: 100vw; */
 }
 
 .spells__input {
     font-size: inherit;
+    font-family: "Architects Daughter", serif;
 }
 
 .spells__list li {
-    
+    font-family: "Architects Daughter", serif;
     }
 
 .spells__list li:hover {
-color: hotpink
+    color: darkred;
+    background: rgba(219, 208, 208, 0.5);
 }
 
 .page__title {
