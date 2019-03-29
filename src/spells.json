@@ -1054,12 +1054,5 @@
     "type": "Charm",
     "effect": "makes an object fly",
     "__v": 0
-  },
-  {
-    "_id": "5b7c58ff733bfc0021174400",
-    "spell": "Wingardium Leviosa",
-    "type": "Charm",
-    "effect": "makes an object fly",
-    "__v": 0
   }
 ]

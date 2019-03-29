@@ -3,6 +3,18 @@ html {
   background-color: black;
 }
 
+textarea {
+  width: 85%;
+  word-break: break-all;
+}
+
+#line-break {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border-color: black;
+}
+
 .selected {
   color: darkred;
   background: rgba(219, 208, 208, 0.5);
@@ -24,18 +36,21 @@ main {
 
 .spells {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-size: 2em;
   padding: 2em;
   padding-top: 20vh;
 }
 
+/* .spells input {
+  font-size: 100%;
+} */
+
 .spells__wrapper {
   max-height: 60vh;
   max-width: 70vw;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .spells__input {
@@ -44,6 +59,7 @@ main {
   font-size: inherit;
   font-family: "Architects Daughter", serif;
   width: 70vw;
+  word-break: break-all;
   overflow-x: hidden;
   background-color: transparent;
 }
@@ -52,12 +68,6 @@ main {
   font-size: 3vh;
 }
 
-#line-break {
-  padding: 0;
-  margin: 0;
-  width: 35vh;
-  border-color: black;
-}
 
 .spells__input:focus {
   /* outline: dashed hsl(0, 50%, 30%); */
@@ -71,6 +81,7 @@ main {
   color: #434a47;
   background-color: transparent;
   border: none;
+  text-align: left;
 }
 
 .spells__list button:hover {
@@ -84,9 +95,13 @@ main {
 }
 
 .output {
-  width: 100%;
+  font-family: "Architects Daughter", serif;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  overflow-wrap: normal;
+  padding: 0 2.6em;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   /* height: 50%; */
 }
 
@@ -108,4 +123,16 @@ main {
   font-family: "Great Vibes", cursive;
   font-weight: 600;
   color: darkred;
+}
+
+@media screen and (max-width: 400px) {
+  textarea {
+    width: 35vh;
+    height: 100px;
+    word-break: break-all;
+  }
+
+  #line-break {
+    width: 35vh;
+  }
 }
