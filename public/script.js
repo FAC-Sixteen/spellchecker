@@ -66,10 +66,10 @@ const focusChange = num => {
 };
 
 document.addEventListener("keydown", function(event) {
-  if (event.which === 40) {
+  if (event.key === "ArrowDown") {
     event.preventDefault();
     focusChange(1);
-  } else if (event.which === 38) {
+  } else if (event.key === "ArrowUp") {
     event.preventDefault();
     focusChange(-1);
   }

@@ -125,6 +125,7 @@ main {
   color: darkred;
 }
 
+
 @media screen and (max-width: 400px) {
   textarea {
     width: 35vh;
@@ -135,4 +136,24 @@ main {
   #line-break {
     width: 35vh;
   }
+
+.Hex {
+  color: darkred;
+}
+
+.Curse {
+  color: hsl(80, 100%, 15%);
+}
+
+.Charm {
+  color: hsl(42, 100%, 15%);
+}
+
+.Spell {
+  color: hsl(200, 100%, 15%);
+}
+
+.Jinx {
+  color: hsl(300, 100%, 15%);
+
 }
