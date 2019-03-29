@@ -93,6 +93,9 @@ const renderSpellInfo = spell => {
 const pullSpell = (str, obj) => obj.filter(thing => thing.spell === str);
 
 const spellHandler = spell => {
+  searchQuery.value = spell;
+  spellList.innerHTML = "";
+
   console.log(spell);
   const spellName = properCaser(spell);
   console.log(spellName);
