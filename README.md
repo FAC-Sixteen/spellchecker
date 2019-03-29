@@ -91,9 +91,6 @@ If we did this project again, we might try deploying a work-in-progress version 
 
 ![](https://media.giphy.com/media/o9hzIlJ4ijpAs/giphy.gif) ![](https://media.giphy.com/media/103t71VKmtY1UY/giphy.gif) ![](https://media.giphy.com/media/5UvS10Ih8f04w/giphy.gif)
 
-### Removing dev dependencies before deploying to Heroku saves headaches
-
-![](https://media.giphy.com/media/najmtazy4OiiI/giphy.gif)
 
 ### Keeping unrelated things in separate sections makes code easier to debug
 ![](https://media.giphy.com/media/R55sOeBR22ogg/giphy.gif)
