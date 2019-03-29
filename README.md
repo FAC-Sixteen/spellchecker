@@ -29,7 +29,7 @@ Their web browser sends requests to a remote Node.js server which retrieves the 
 ## :chart_with_upwards_trend: Our process
 
 1. Brainstormed ideas, picked one together
-2. ![Whiteboarded the user journey and project file structure](https://www.figma.com/file/IaKkfSXC5Cuz4LO3t3oCUjZO/Untitled?node-id=0%3A1)
+2. [Whiteboarded the user journey and project file structure](https://www.figma.com/file/IaKkfSXC5Cuz4LO3t3oCUjZO/Untitled?node-id=0%3A1)
 3. Set up Node.js server
 4. Write tests for handler functions 
 5. Write handler functions querying user input against dummy spell list
