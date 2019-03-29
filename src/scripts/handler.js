@@ -20,7 +20,7 @@ const handleHomeRoute = (req, res) => {
 };
 
 const handleSpellRoute = (req, res) => {
-  fs.readFile(path.join(__dirname, "..", "spell.json"), (error, file) => {
+  fs.readFile(path.join(__dirname, "..", "spells.json"), (error, file) => {
     if (error) {
       console.log(error);
       res.writeHead(500, { "Content-Type": "text/html" });
