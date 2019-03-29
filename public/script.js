@@ -32,6 +32,8 @@ const appendSpells = spells => {
 
 const inputHandler = e => {
   const input = e.target.value;
+  console.log(input);
+  outputDisplay.innerHTML = "";
 
   fetch("/spells")
     .then(response => response.json())
