@@ -55,9 +55,9 @@ We couldn't understand why the handler function in our handler.js file wouldn't 
 
 ### Reaching the 404 error page
 
-![](https://media.giphy.com/media/103t71VKmtY1UY/giphy.gif)
+![](https://img2.thejournal.ie/inline/1781162/original/?width=450&version=1781162)
 
-We struggled to catch all the possible 404 requests in our router.js file. Many requests that should have resulted in a 404 were not reaching our beautiful 404 page. This made us sad.
+We struggled to catch all the possible 404 requests in our router.js file. Many requests that should have resulted in a 404 were not reaching our beautiful 404 page. This made us sad (until we fixed it).
 
 ### Keying through spells on the DOM
 
@@ -88,10 +88,11 @@ If we did this project again, we might try deploying a work-in-progress version 
 
 ### The difference between the server, the router and the handler(s)
 
-| The Server | The Router | The Handler | 
-| ![](https://media.giphy.com/media/o9hzIlJ4ijpAs/giphy.gif) | ![](https://media.giphy.com/media/103t71VKmtY1UY/giphy.gif) | ![](https://media.giphy.com/media/5UvS10Ih8f04w/giphy.gif) | 
+
+![](https://media.giphy.com/media/o9hzIlJ4ijpAs/giphy.gif) ![](https://media.giphy.com/media/103t71VKmtY1UY/giphy.gif) ![](https://media.giphy.com/media/5UvS10Ih8f04w/giphy.gif)
 
 ### Removing dev dependencies before deploying to Heroku saves headaches
+
 ![](https://media.giphy.com/media/najmtazy4OiiI/giphy.gif)
 
 ### Keeping unrelated things in separate sections makes code easier to debug
