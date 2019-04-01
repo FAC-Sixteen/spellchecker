@@ -1,6 +1,10 @@
 const router = require("./router.js");
 const fs = require("fs");
 const path = require("path");
+const url = require("url");
+const spellData = require("../spells.json");
+const spellFinder = require("./spellfinder.js").spellFinder;
+const pullSpell = require("./spellfinder.js").pullSpell;
 
 const handleHomeRoute = (req, res) => {
   fs.readFile(
@@ -30,6 +34,22 @@ const handleSpellRoute = (req, res) => {
       res.end(file);
     }
   });
+};
+
+const newSpellRoute = (req, res) => {
+  const spellSearch = url.parse(req.url, true).query.search;
+  // console.log(spellSearch);
+  const returnSpells = spellFinder(spellSearch, spellData);
+  // console.log(returnSpells);
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify(returnSpells));
+};
+
+const searchSpellRoute = (req, res) => {
+  const spellName = url.parse(req.url, true).query.search;
+  const returnSpellData = pullSpell(spellName, spellData);
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify(returnSpellData));
 };
 
 const handlePublic = (req, res) => {
@@ -77,6 +97,8 @@ const handle404 = (req, res) => {
 
 module.exports = {
   handleHomeRoute,
+  newSpellRoute,
+  searchSpellRoute,
   handleSpellRoute,
   handlePublic,
   handle404
