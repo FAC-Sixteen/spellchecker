@@ -2,19 +2,6 @@ const searchQuery = document.querySelector(".spells__input");
 const spellList = document.querySelector(".spells__list");
 const outputDisplay = document.querySelector(".output__display");
 
-const spellFinder = (str, obj) => {
-  if (str.length === 0) {
-    spellList.innerHTML = "";
-    return;
-  }
-  const lowerNames = obj.map(item => item.spell.toLowerCase());
-  let returnSpells = [];
-  lowerNames.forEach(spell => {
-    if (spell.includes(str)) returnSpells.push(spell);
-  });
-  appendSpells(returnSpells);
-};
-
 const appendSpells = spells => {
   spellList.innerHTML = "";
   let ind = 0;
@@ -32,15 +19,12 @@ const appendSpells = spells => {
 
 const inputHandler = e => {
   const input = e.target.value;
-  console.log(input);
   outputDisplay.innerHTML = "";
 
-  fetch("/spells")
+  fetch(`/spells?search=${input}`)
     .then(response => response.json())
-    .then(json => spellFinder(input, json));
+    .then(json => appendSpells(json));
 };
-
-const properCaser = string => string.replace(/\b\w/g, l => l.toUpperCase());
 
 const focusChange = num => {
   if (document.hasFocus) {
@@ -76,10 +60,7 @@ document.addEventListener("keydown", function(event) {
 });
 
 const renderSpellInfo = spell => {
-  console.log(spell);
   outputDisplay.innerHTML = "";
-
-  console.log(outputDisplay);
   const name = document.createElement("li");
   name.textContent = `Name: ${spell.spell}`;
   outputDisplay.appendChild(name);
@@ -92,19 +73,12 @@ const renderSpellInfo = spell => {
   outputDisplay.classList.add(`${spell.type}`);
 };
 
-const pullSpell = (str, obj) => obj.filter(thing => thing.spell === str);
-
 const spellHandler = spell => {
   searchQuery.value = spell;
   spellList.innerHTML = "";
-
-  console.log(spell);
-  const spellName = properCaser(spell);
-  console.log(spellName);
-  fetch("/spells")
+  fetch(`/search?search=${spell}`)
     .then(response => response.json())
-    .then(json => pullSpell(spellName, json))
-    .then(spell => renderSpellInfo(spell[0]));
+    .then(json => renderSpellInfo(json[0]));
 };
 
 searchQuery.oninput = inputHandler;
